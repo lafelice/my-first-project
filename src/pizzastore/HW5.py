@@ -1,3 +1,4 @@
+import random
 pizzas = [
     (1, 'Mexicana', 15, 'Base + jalapeno + meet + cheeser'),
     (2, 'Kebabpizza', 12, 'kebab + feta + turkish pepper + cheese'),
@@ -5,13 +6,13 @@ pizzas = [
     (4, 'Frutti Di Mare', 15, 'Tuna + shrimps + mussel'),
     (5, 'Quatro stagioni', 12, 'Tuna + mushrooms + shrimps + turkey strips'),
     (6, 'Margherita', 10, 'cheese + tomato'),
-    (7, 'Hawaii', 11, 'turkey + ananas + cheese'),
+    (7, 'Hawaii', 11 , 'turkey + ananas + cheese'),
     (8, 'Quatro formaggi', 12, 'Emmental + feta + chedar + mozzarella'),
     (9, 'Romeo', 12, 'salami + anans + shrimps + cheese'),
     (10, 'Special', 13, 'kebab + chicken + salami + olive + feta + paprika')
 ]
 while True:
-    print('Hello! 0 - Exit, 1 - pizzas')
+    print('Hello! 0 - Exit, 1 - pizzas, 2 - random item')
     c = input('Your choice: ')
     match c:
         case '0':
@@ -20,6 +21,13 @@ while True:
         case '1':
             for pizzas_item in pizzas:
                 print(pizzas_item)
+
+        case '2':
+            receipt = random.randint(1, 5)
+            print(f"Random amount items in receipt")
+            for pizzas_item in random.sample(pizzas, receipt):
+                pizzas_amount = random.randint(1, 3)
+                print(f"{pizzas_item[1]} {pizzas_item[3]} * {pizzas_amount}")
 
         case _:
             print('Wrong choice! Try again')
