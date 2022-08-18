@@ -1,3 +1,4 @@
+import random
 pizzas = [
     (1, 'Mexicana', 15, 'Base + jalapeno + meet + cheeser'),
     (2, 'Kebabpizza', 12, 'kebab + feta + turkish pepper + cheese'),
@@ -19,7 +20,21 @@ while True:
             break
         case '1':
             for pizzas_item in pizzas:
-                print(pizzas_item)
+                print(*pizzas_item)
+
+        case '2':
+            receipt = random.randint(1, 5)
+            print(f"Random amount items in receipt")
+            for pizzas_item in random.sample(pizzas, receipt):
+                pizzas_amount = random.randint(1, 3)
+                print(f"{pizzas_item[1]} {pizzas_item[3]} * {pizzas_amount}")
+
+        case '3':
+            price = int(input ('Enter price: '))
+            newlist = [i for i in pizzas if i[2] < price]
+            for pizzas_price in newlist:
+                print(*pizzas_price)
+
 
         case _:
             print('Wrong choice! Try again')
