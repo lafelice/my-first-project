@@ -30,7 +30,7 @@ while True:
                 print(f"{pizzas_item[1]} {pizzas_item[3]} * {pizzas_amount}")
 
         case '3':
-            price = int(input ('Enter price: '))
+            price = int(input ('Enter price:'))
             newlist = [i for i in pizzas if i[2] < price]
             for pizzas_price in newlist:
                 print(*pizzas_price)
